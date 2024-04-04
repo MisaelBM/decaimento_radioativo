@@ -1,0 +1,149 @@
+const ArrayOfElements = [{
+    weigth: 207,
+    nameElem: "Pb",
+    numberAtm: 82
+}, {
+    weigth: 208,
+    nameElem: "Bi",
+    numberAtm: 83
+}, {
+    weigth: 209,
+    nameElem: "Po",
+    numberAtm: 84
+}, {
+    weigth: 210,
+    nameElem: "At",
+    numberAtm: 85
+}, {
+    weigth: 220,
+    nameElem: "Rn",
+    numberAtm: 86
+}, {
+    weigth: 223,
+    nameElem: "Fr",
+    numberAtm: 87
+}, {
+    weigth: 226,
+    nameElem: "Ra",
+    numberAtm: 88
+}, {
+    weigth: 227,
+    nameElem: "Ac",
+    numberAtm: 89
+}, {
+    weigth: 232,
+    nameElem: "Th",
+    numberAtm: 90
+}, {
+    weigth: 231,
+    nameElem: "Pa",
+    numberAtm: 91
+}, {
+    weigth: 238,
+    nameElem: "U",
+    numberAtm: 92
+}, {
+    weigth: 237,
+    nameElem: "Np",
+    numberAtm: 93
+}, {
+    weigth: 244,
+    nameElem: "Pu",
+    numberAtm: 94
+}, {
+    weigth: 243,
+    nameElem: "Am",
+    numberAtm: 95
+}, {
+    weigth: 247,
+    nameElem: "Cm",
+    numberAtm: 96
+}, {
+    weigth: 247,
+    nameElem: "Bk",
+    numberAtm: 97
+}, {
+    weigth: 251,
+    nameElem: "Cf",
+    numberAtm: 98
+}, {
+    weigth: 252,
+    nameElem: "Es",
+    numberAtm: 99
+}, {
+    weigth: 257,
+    nameElem: "Fm",
+    numberAtm: 100
+}, {
+    weigth: 258,
+    nameElem: "Md",
+    numberAtm: 101
+}, {
+    weigth: 259,
+    nameElem: "No",
+    numberAtm: 102
+}, {
+    weigth: 262,
+    nameElem: "Lr",
+    numberAtm: 103
+}, {
+    weigth: 261,
+    nameElem: "Rf",
+    numberAtm: 104
+}, {
+    weigth: 262,
+    nameElem: "Db",
+    numberAtm: 105
+}, {
+    weigth: 266,
+    nameElem: "Sg",
+    numberAtm: 106
+}, {
+    weigth: 264,
+    nameElem: "Bh",
+    numberAtm: 107
+}, {
+    weigth: 277,
+    nameElem: "Hs",
+    numberAtm: 108
+}, {
+    weigth: 268,
+    nameElem: "Mt",
+    numberAtm: 109
+}, {
+    weigth: 271,
+    nameElem: "Ds",
+    numberAtm: 110
+}, {
+    weigth: 272,
+    nameElem: "Rg",
+    numberAtm: 111
+}, {
+    weigth: 277,
+    nameElem: "Cn",
+    numberAtm: 112
+}, {
+    weigth: 286,
+    nameElem: "Nh",
+    numberAtm: 113
+}, {
+    weigth: 289,
+    nameElem: "Fl",
+    numberAtm: 114
+}, {
+    weigth: 288,
+    nameElem: "Mc",
+    numberAtm: 115
+}, {
+    weigth: 293,
+    nameElem: "Lv",
+    numberAtm: 116
+}, {
+    weigth: 294,
+    nameElem: "Ts",
+    numberAtm: 117
+}, {
+    weigth: 294,
+    nameElem: "Og",
+    numberAtm: 118
+}];
