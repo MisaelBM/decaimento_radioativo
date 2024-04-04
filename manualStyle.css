@@ -24,23 +24,6 @@ body {
     border-radius: 10px;
     background-color: rgb(189, 188, 188);
 }
-@media (max-width: 550px) {
-    .input-element {
-        width: 300px;
-        height: 200px;
-    },
-    .atm-weigth-input {
-        font-size: 20px;
-        width: 120px;
-    },
-    .atm-number-input {
-        font-size: 20px;
-        width: 150px;
-    },
-    .symbol-element {
-        font-size: 25px;
-    }
-}   
 .atm-weigth {
     position: absolute;
     top: 0;
@@ -188,3 +171,20 @@ input:focus {
     height: 50px;
     margin: 10px 20px 10px 20px;
 }
+@media (max-width: 550px) {
+    .input-element {
+        width: 300px;
+        height: 200px;
+    }
+    .atm-weigth-input {
+        font-size: 20px;
+        width: 120px;
+    }
+    .atm-number-input {
+        font-size: 20px;
+        width: 150px;
+    }
+    .symbol-element {
+        font-size: 25px;
+    }
+}   
