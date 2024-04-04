@@ -83,16 +83,18 @@ function BetaFunc() {
 };
 //Funcao de deletar o ultimo elemento
 function DeleteFunc() {
-    arrElementsVisor.pop();
-    arrSignal.pop();
-    weigthAtm = arrElementsVisor[arrElementsVisor.length - 1].weigth;
-    numberAtm = arrElementsVisor[arrElementsVisor.length - 1].numberAtm;
-    nameElement = arrElementsVisor[arrElementsVisor.length - 1].nameElem;
-    ArrayOfElements.forEach(e => {
-        (e.nameElem == nameElement) ? indexElem = ArrayOfElements.indexOf(e) : false;
-    });
-    AddElementsVisor();
-};
+    if (arrSignal.length != 0) {
+        arrElementsVisor.pop();
+        arrSignal.pop();
+        weigthAtm = arrElementsVisor[arrElementsVisor.length - 1].weigth;
+        numberAtm = arrElementsVisor[arrElementsVisor.length - 1].numberAtm;
+        nameElement = arrElementsVisor[arrElementsVisor.length - 1].nameElem;
+        ArrayOfElements.forEach(e => {
+            (e.nameElem == nameElement) ? indexElem = ArrayOfElements.indexOf(e) : false;
+        });
+        AddElementsVisor();
+    };
+}; 
 //Funcao que mostra os elementos no visor
 function AddElementsVisor() {
     document.getElementById("visor").innerHTML = "";
