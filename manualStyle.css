@@ -177,14 +177,14 @@ input:focus {
         height: 200px;
     }
     .atm-weigth-input {
-        font-size: 20px;
-        width: 120px;
+        font-size: 30px;
+        width: 200px;
     }
     .atm-number-input {
-        font-size: 20px;
-        width: 150px;
+        font-size: 30px;
+        width: 180px;
     }
     .symbol-element {
-        font-size: 25px;
+        font-size: 62px;
     }
 }   
