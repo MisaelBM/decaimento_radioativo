@@ -114,7 +114,7 @@ function AddElementsVisor() {
         if (arrSignal[i]) {
             document.getElementById("visor").innerHTML += `
             <div class="signal-elements">
-                ${arrSignal[i]}
+                ${arrSignal[i]} <i class="fa-solid fa-angles-right"></i>
             </div>`;
         };
     };
