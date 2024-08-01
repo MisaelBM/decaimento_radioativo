@@ -28,10 +28,6 @@ main {
 }
 .button-content {
     width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -45,7 +41,14 @@ main {
     box-shadow: 5px 5px 10px black;
     border-radius: 10px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     transition: 0.7s;
+}
+.fa-radiation {
+    margin-right: 5px;
 }
 .button-action:hover {
     background-color: black;
