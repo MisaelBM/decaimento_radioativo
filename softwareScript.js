@@ -497,7 +497,7 @@ function AddElementsVisor() {
     document.querySelectorAll(".info-isotope-button").forEach(e => {
         e.addEventListener('click', () => {
             document.getElementById("boxDescription").style.display = "flex";
-            document.getElementById("boxDescription").style.left = e.getBoundingClientRect().left + 300 < screen.width ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 150}px`;
+            document.getElementById("boxDescription").style.left = e.getBoundingClientRect().left + 300 < screen.width ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 100}px`;
             document.getElementById("boxDescription").style.top = `${e.getBoundingClientRect().top}px`;
             let elementsClass = document.getElementsByClassName("info-isotope-button");
             for (let i = 0; i < elementsClass.length; i++) {
