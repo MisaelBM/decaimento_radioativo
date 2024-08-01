@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decaimento radioativo com IA</title>
+    <link rel="stylesheet" href="softwareStyle.css">
+    <script src="https://kit.fontawesome.com/65bfbf4940.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="input-element-content" id="inputContent">
+            <div class="text-select">Selecione um elemento</div>
+            <div class="select-isotope-content">
+                <select name="selectIsotope" id="selectIsotope" class="select-isotope"></select>
+            </div>
+            <div class="button-start-content">
+                <button class="button-start" id="buttonStart">iniciar decaimento</button>
+            </div>
+        </div>
+        <div class="system-content" id="systemContent">
+            <div class="decay-type-content">
+                <div class="decay-type">
+                    Objetivo do decaimento: <span id="decayType" class="decay-type-text"></span>
+                </div>
+            </div>
+            <div class="visor-content">
+                <span class="visor" id="visor"></span>
+            </div>
+            <div class="box-description" id="boxDescription">
+                <header class="head-box">
+                    <button class="button-box-close" id="boxClose"><i class="fa-solid fa-x"></i></button>
+                    <span class="description-title" id="descriptionTitle"></span>
+                </header>
+                <div class="text-description">
+                    <span class="span-box-description" id="textDescription"></span>
+                </div>
+            </div>
+            <div class="buttons-action-content">
+                <div class="button-action-div">
+                    <button class="button-action" id="alpha">α</button>
+                </div>
+                <div class="button-action-div">
+                    <button class="button-action" id="beta">β</button>
+                </div>
+                <div class="button-action-div">
+                    <button class="button-action" id="delete"><i class="fa-solid fa-delete-left"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="softwareScript.js"></script>
+</body>
+</html>
