@@ -492,6 +492,7 @@ function AddElementsVisor() {
             <div class="signal-elements">
                 ${arrSignal[i]} <i class="fa-solid fa-angles-right"></i>
             </div>` : false;
+        document.getElementById("visor").scrollTop = document.getElementById("visor").scrollHeight;
     };
     //Adiciona o clique do botao de descricao do elemento
     document.querySelectorAll(".info-isotope-button").forEach(e => {
