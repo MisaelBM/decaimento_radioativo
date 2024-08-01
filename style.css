@@ -28,6 +28,10 @@ main {
 }
 .button-content {
     width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
