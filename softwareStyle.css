@@ -139,7 +139,6 @@ input:focus {
 .text-description {
     width: fit-content;
     max-height: 250px;
-    overflow: auto;
     padding: 5px;
     margin-top: 5px;
     display: flex;
@@ -152,6 +151,8 @@ input:focus {
     align-items: center;
     justify-content: center;
     height: fit-content;
+    max-height: 250px;
+    overflow: auto;
 }
 .button-box-close {
     position: absolute;
