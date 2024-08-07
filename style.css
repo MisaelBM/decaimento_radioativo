@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: gray;
 }
 main {
@@ -34,9 +34,9 @@ main {
 }
 .button-action {
     padding: 5px 15px 5px 15px;
-    width: 220px;
+    width: 270px;
     border: 1px solid black;
-    font-size: 25px;
+    font-size: 30px;
     color: black;
     box-shadow: 5px 5px 10px black;
     border-radius: 10px;
@@ -54,6 +54,151 @@ main {
     background-color: rgb(152, 205, 255);
     transform: scale(1.1);
     transition: 0.7s;
+}
+.config-content {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: gray;
+}
+.button-exit-config {
+    border: 0px solid;
+    border-radius: 30px;
+    background-color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    padding: 5px 7px;
+}
+.config-title {
+    font-size: 30px;
+}
+.effects-sounds-config {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+}
+.effects-sounds-title {
+    font-size: 25px;
+    margin: 10px;
+}
+.effects-sounds-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.effects-sounds-input {
+    display: none;
+}
+#effectsSounds:checked ~ label .effects-sounds-input-light::before{
+    background-color: rgb(31, 192, 45);
+    transform: translateX(50px);
+    content: "ON";
+    transition: 0.2s;
+}
+.effects-sounds-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.effects-sounds-input-body {
+    display: flex;
+    position: relative;
+    height: 39px;
+    width: 103px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+.effects-sounds-input-light::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    height: 35px;
+    width: 50px;
+    border-radius: 30px;
+    border: 3px solid black;
+    background-color: red;
+    left: 0;
+    content: "OFF";
+    transition: 0.2s;
+}
+.quest-mode-config {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+}
+.quest-mode-title {
+    font-size: 25px;
+    margin: 10px;
+}
+.quest-mode-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.quest-mode-input {
+    display: none;
+}
+#questMode:checked ~ label .quest-mode-input-light::before{
+    background-color: rgb(31, 192, 45);
+    transform: translateX(50px);
+    content: "ON";
+    transition: 0.2s;
+}
+.quest-mode-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+.quest-mode-input-body {
+    display: flex;
+    position: relative;
+    height: 39px;
+    width: 103px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+.quest-mode-input-light::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    height: 35px;
+    width: 50px;
+    border-radius: 30px;
+    border: 3px solid black;
+    background-color: red;
+    left: 0;
+    content: "OFF";
+    transition: 0.2s;
+}
+hr {
+    border: 1px solid black;
+    width: 100%;
 }
 footer {
     position: fixed;
