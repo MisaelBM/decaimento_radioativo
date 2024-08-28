@@ -3,6 +3,7 @@ let weigthAtm;
 let nameElement;
 let arrElementsVisor = [];
 let arrSignal = [];
+const questMode = JSON.parse(localStorage.getItem("questModeRes"));
 
 const ArrayOfElements = [{
     isotopes: [206],
@@ -477,7 +478,7 @@ function AddElementsVisor() {
     for (let i = 0; i < arrElementsVisor.length; i++) {
         document.getElementById("visor").innerHTML += `
         <div class="element-visor">
-            ${`${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}` == ArrSeries[seriesNumber].lastIsotope ? `` : `<button class="info-isotope-button" style="background-color: ${VerificationSeriesColor(arrElementsVisor[i].weigth, arrElementsVisor[i].numberAtm)};"><i class="fa-sharp fa-solid fa-circle-question"></i></button>`}
+            ${`${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}` == ArrSeries[seriesNumber].lastIsotope || questMode ? `` : `<button class="info-isotope-button" style="background-color: ${VerificationSeriesColor(arrElementsVisor[i].weigth, arrElementsVisor[i].numberAtm)};"><i class="fa-sharp fa-solid fa-circle-question"></i></button>`}
             <div class="weigth-visor">
                 ${arrElementsVisor[i].weigth}
             </div>
@@ -526,7 +527,7 @@ function DescriptionElement(index) {
     //Processo de estruturacao do texto
     document.getElementById("descriptionTitle").innerHTML = `${descriptionName}-${descriptionWeigth}`;
     let textDescription = ``;
-    textDescription += `O isótopo ${descriptionName}-${descriptionWeigth} `;
+    textDescription += `O isótopo ${descriptionName}-${descriptionWeigth} possui ${descriptionNumber} prótons e ${descriptionWeigth - descriptionNumber} nêutrons, `;
     let haveElement = false;
     ArrSeries[seriesNumber].isotopes.forEach(e => {
         if (e.isotopes.includes(descriptionWeigth) && e.numberAtm == descriptionNumber) return haveElement = true;
