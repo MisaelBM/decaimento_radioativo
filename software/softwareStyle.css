@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: rgb(143, 142, 142);
 }
 main {
@@ -120,6 +120,15 @@ input:focus {
     border-radius: 10px;
     box-shadow: 5px 5px 10px black;
     padding-bottom: 10px;
+    animation: box-description-anim 0.3s ease-in-out;
+}
+@keyframes box-description-anim {
+    from {
+        transform: scale(0.1) translate(-100px, -100px);
+    }
+    to {
+        transform: scale(1) translate(0px, 0px);
+    }
 }
 .head-box {
     background-color: rgb(85, 85, 85);
@@ -186,6 +195,29 @@ input:focus {
     font-size: 30px;
     border: 1px solid black;
     border-radius: 10px;
+    padding: 5px 10px;
+    background-color: white;
+}
+.button-finish-decay {
+    width: 190px;
+    height: 50px;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px 10px;
+    animation: finish-button-anim 1.5s infinite ease-in-out;
+}
+@keyframes finish-button-anim {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: rgb(240, 79, 30);
+    }
+    100% {
+        background-color: white;
+    }
 }
 .element-visor {
     width: 53px;
@@ -242,4 +274,70 @@ input:focus {
     font-size: 40px;
     height: 50px;
     margin: 10px 20px 10px 20px;
+}
+.finish-description-backdrop {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+}
+.finish-description-content {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    background-color: rgb(184, 184, 184);
+    margin: auto;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.header-finish-description {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    background-color: rgb(212, 212, 212);
+    border-radius: 15px 15px 0px 0px;
+    border-bottom: 2px solid black;
+}
+.finish-description-title {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    font-size: 25px;
+}
+.button-exit-finish-description {
+    border: 0px solid;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.finish-description-text {
+    text-align: justify;
+    padding: 10px;
+    font-size: 20px;
+    max-height: 100%;
+    overflow: auto;
+}
+.description-element-content {
+    width: 200px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(226, 226, 226);
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
 }

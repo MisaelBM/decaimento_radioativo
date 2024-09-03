@@ -393,9 +393,6 @@ document.getElementById("buttonStart").addEventListener('click', () => {
         document.getElementById("decayType").innerHTML = `<b>${ArrSeries[weigthAtm % 4].lastIsotope}</b>`;
         seriesNumber = weigthAtm % 4;
         AddElementsVisor();
-        document.getElementById("alpha").addEventListener('click', AlphaFunc);
-        document.getElementById("beta").addEventListener('click', BetaFunc);
-        document.getElementById("delete").addEventListener('click', DeleteFunc);
         document.getElementById("systemContent").style.display = "flex";
         document.getElementById("inputContent").style.display = "none";
     };
@@ -507,6 +504,30 @@ function AddElementsVisor() {
             };
         });
     });
+    //Troca os botoes do visor caso tenha sido concluido o decaimento
+    if (`${arrElementsVisor[arrElementsVisor.length - 1].nameElem}-${arrElementsVisor[arrElementsVisor.length - 1].weigth}` == ArrSeries[seriesNumber].lastIsotope) { 
+        document.getElementById("buttonsActionContent").innerHTML = `<div class="button-action-div">
+                <button class="button-finish-decay" id="finishDecay">Finalizar</button>
+            </div>
+            <div class="button-action-div">
+                <button class="button-action" id="delete"><i class="fa-solid fa-delete-left"></i></button>
+        </div>`;
+        document.getElementById("finishDecay").addEventListener('click', FinishDecayDescription);
+        document.getElementById("delete").addEventListener('click', DeleteFunc);
+    } else {
+        document.getElementById("buttonsActionContent").innerHTML = `<div class="button-action-div">
+                <button class="button-action" id="alpha">α</button>
+            </div>
+            <div class="button-action-div">
+                <button class="button-action" id="beta">β</button>
+            </div>
+            <div class="button-action-div">
+                <button class="button-action" id="delete"><i class="fa-solid fa-delete-left"></i></button>
+        </div>`;
+        document.getElementById("alpha").addEventListener('click', AlphaFunc);
+        document.getElementById("beta").addEventListener('click', BetaFunc);
+        document.getElementById("delete").addEventListener('click', DeleteFunc);
+    };
 };
 //Fecha a caixa de descricao
 document.getElementById("boxClose").addEventListener('click', () => document.getElementById("boxDescription").style.display = "none");
@@ -612,4 +633,44 @@ function DescriptionElement(index) {
         textDescription += ` resultando no ${ArrSeries[seriesNumber].isotopes[nearIndex].nameElem}-${nearWeigth}.`;
     };
     document.getElementById("textDescription").innerHTML = textDescription;
+};
+//Funcao que faz a descricao final do decaimento
+function FinishDecayDescription() {
+    if (!questMode) {
+        document.getElementById("finishDescription").style.display = "flex";
+        document.getElementById("buttonExitFinishDescription").addEventListener('click', () => document.getElementById("finishDescription").style.display = "none");
+        let textFinishDesciption = ``;
+        textFinishDesciption += `Essa é a série radioativa do <b>${ArrSeries[weigthAtm % 4].nameSeries}</b> e ela acontece de forma ${weigthAtm % 4 == 3 ? `<b>artificial</b>` : `<b>natural</b>`}`;
+        let arrRes = arrElementsVisor.map(e => {
+            let haveElement = false;
+            ArrSeries[seriesNumber].isotopes.forEach(el => {
+                if (el.isotopes.includes(e.weigth) && el.numberAtm == e.numberAtm) haveElement = true;
+            });
+            return haveElement;
+        });
+        let listElementsFalse = [];
+        for (let i in arrRes) if (!arrRes[i]) listElementsFalse.push(`<div class="element-description">${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}</div>`);
+        let textElementsFalse = "";
+        if (listElementsFalse.length > 1) {
+            for (let i in listElementsFalse) textElementsFalse += i == listElementsFalse.length - 1 ? `e ${listElementsFalse[i]}` : i == listElementsFalse.length - 2 ? `${listElementsFalse[i]} ` : `${listElementsFalse[i]}, `;
+        } else {
+            textElementsFalse = listElementsFalse.toString();
+        };
+        textFinishDesciption += arrRes.includes(false) && weigthAtm % 4 != 3 ? `, mas do jeito como foi realizada é somente possível fazer o decaimento de forma <b>artificial</b>, pois o${listElementsFalse.length > 1 ? `s elementos ${textElementsFalse} não estão presentes na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. ` : ` elemento ${textElementsFalse} não está presente na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. `}` : `. `;
+        if (arrRes.includes(false)) for (let i in arrRes) textFinishDesciption += !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `Acontece um pequeno desvio no decaimento onde é utilizado o elemento ${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth} que não se encontra na série radioativa original, mas já é rapidamente corrigido com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento ${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}. ` : !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && !arrRes[parseInt(i) + 1] ? `Existe um desvio no decaimento que começa no elemento ${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth} ` : !arrRes[parseInt(i)] && (!arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `e termina no elemento ${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth} que corrige o desvio com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento ${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}. ` : ``;
+        textFinishDesciption += `O decaimento realizado é composto por ${arrElementsVisor.length} elementos, que começa no elemento <div class="element-description">${arrElementsVisor[0].nameElem}-${arrElementsVisor[0].weigth}</div> e termina com o elemento <div class="element-description">${arrElementsVisor[arrElementsVisor.length - 1].nameElem}-${arrElementsVisor[arrElementsVisor.length - 1].weigth}</div>, assim finalizando o decaimento. `;
+        let emissionAlpha = 0;
+        let emissionBeta = 0;
+        arrSignal.forEach(e => {
+            if (e == "α") {
+                emissionAlpha++
+            } else {
+                emissionBeta++
+            }; 
+        });
+        textFinishDesciption += !(arrRes.includes(false)) ? `Nesse decaimento ${arrSignal.length > 1 ? `foram realizadas ${arrSignal.length} emissões que são ${emissionAlpha} <b>Alfa (α)</b> e ${emissionBeta} <b>Beta (β)</b>. ` : `foi realizado ${arrSignal.length} emissão que é ${arrSignal[0] == "α" ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`}`}` : ``;
+        document.getElementById("finishDescriptionVisor").innerHTML = textFinishDesciption;
+    } else {
+
+    };
 };
