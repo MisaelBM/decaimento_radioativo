@@ -341,3 +341,11 @@ input:focus {
     justify-content: center;
     text-align: justify;
 }
+.element-description {
+    color: blue;
+    transition: 0.7s;
+}
+.element-description:hover {
+    color: green;
+    transition: 0.7s;
+}
