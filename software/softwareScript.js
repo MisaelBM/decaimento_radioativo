@@ -372,6 +372,12 @@ ArrayOfElements.forEach(e => {
         document.getElementById(`${e.nameElem}Group`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
     });
 });
+document.getElementById("searchButton").addEventListener('click', () => {
+    ArrayOfElements.forEach(e => {
+        let nameElement = e.nameElem.toLowerCase();
+        document.getElementById("resultsSearch").innerHTML += nameElement.includes(document.querySelector("#searchElement").value) || e.numberAtm == parseInt(document.querySelector("#searchElement").value) || e.isotopes.indexOf(document.querySelector("#searchElement").value) >= 0 ? `<div class="elements-results">${e.nameElem}</div><hr>` : ``;
+    });
+});
 //Recebe os valores do elemento dados pelo user
 let seriesNumber;
 document.getElementById("buttonStart").addEventListener('click', () => {
