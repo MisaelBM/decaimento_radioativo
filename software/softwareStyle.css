@@ -27,7 +27,7 @@ input:focus {
 .select-isotope-content {
     width: 100%;
     height: fit-content;
-    margin: 5px; 
+    margin: 10px; 
 }
 .text-select {
     font-size: 20px;
@@ -44,7 +44,7 @@ input:focus {
 }
 .button-start-content {
     width: fit-content;
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 .button-start {
     font-size: 30px;
@@ -58,6 +58,51 @@ input:focus {
 .button-start:hover {
     background-color: rgb(75, 143, 231);
     transition: 0.7s;
+}
+.text-or {
+    font-size: 20px;
+}
+.search-element-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.search-element {
+    width: 100%;
+    height: fit-content;
+    font-size: 20px;
+    text-align: start;
+    border-radius: 20px 0px 0px 20px;
+    padding: 7px;
+    box-shadow: 3px 3px 10px black;
+    border: 2px solid black;
+}
+::-webkit-input-placeholder {
+    color: black;
+}
+.search-button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0px 20px 20px 0px;
+    padding: 7px 12px;
+    box-shadow: 3px 3px 10px black;
+    border: 2px solid black;
+}
+.results-search {
+    width: 200px;
+    height: fit-content;
+    max-height: 250px;
+    overflow: auto;
+    background-color: rgb(224, 224, 224);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    margin: 5px;
 }
 .system-content {
     width: 100vw;
