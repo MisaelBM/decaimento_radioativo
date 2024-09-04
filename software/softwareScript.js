@@ -425,6 +425,13 @@ function AlphaFunc() {
         });
         arrSignal.push("α");
         AddElementsVisor();
+    } else {
+        document.getElementById("alpha").style.backgroundColor = "brown";
+        setTimeout(
+            () => {
+                document.getElementById("alpha").style.backgroundColor = "white";
+            }
+        , 500);
     };
 };
 //Funcao beta
@@ -453,6 +460,13 @@ function BetaFunc() {
         });
         arrSignal.push("β");
         AddElementsVisor();
+    } else {
+        document.getElementById("beta").style.backgroundColor = "brown";
+        setTimeout(
+            () => {
+                document.getElementById("beta").style.backgroundColor = "white";
+            }
+        , 500);
     };
 };
 //Funcao de deletar o ultimo elemento
@@ -496,7 +510,7 @@ function AddElementsVisor() {
     document.querySelectorAll(".info-isotope-button").forEach(e => {
         e.addEventListener('click', () => {
             document.getElementById("boxDescription").style.display = "flex";
-            document.getElementById("boxDescription").style.left = e.getBoundingClientRect().left + 300 < screen.width ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 100}px`;
+            document.getElementById("boxDescription").style.left = e.getBoundingClientRect().left + 300 < innerWidth ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 100}px`;
             document.getElementById("boxDescription").style.top = `${e.getBoundingClientRect().top}px`;
             let elementsClass = document.getElementsByClassName("info-isotope-button");
             for (let i = 0; i < elementsClass.length; i++) {
@@ -670,6 +684,24 @@ function FinishDecayDescription() {
         });
         textFinishDesciption += !(arrRes.includes(false)) ? `Nesse decaimento ${arrSignal.length > 1 ? `foram realizadas ${arrSignal.length} emissões que são ${emissionAlpha} <b>Alfa (α)</b> e ${emissionBeta} <b>Beta (β)</b>. ` : `foi realizado ${arrSignal.length} emissão que é ${arrSignal[0] == "α" ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`}`}` : ``;
         document.getElementById("finishDescriptionVisor").innerHTML = textFinishDesciption;
+        //Coloca o escutador de eventos nos elementos citados
+        document.querySelectorAll(".element-description").forEach(e => {
+            e.addEventListener('mouseenter', () => {  
+                document.getElementById("descriptionElement").style.display = "flex";
+                document.getElementById("descriptionElement").style.left = e.getBoundingClientRect().left + 300 < innerWidth ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 130}px`;
+                document.getElementById("descriptionElement").style.top = `${e.getBoundingClientRect().top < innerHeight - 180 ? e.getBoundingClientRect().top + 25 : e.getBoundingClientRect().top - 175}px`;
+                CreatElementDescription(e.textContent);
+            });
+            e.addEventListener('mouseleave', () => {
+                document.getElementById("descriptionElement").style.display = "none";
+            });
+        });
+        function CreatElementDescription(element) {
+            let elementProps = element.split("-");
+            let numberElement;
+            arrElementsVisor.forEach(e => {if (e.nameElem == elementProps[0]) numberElement = e.numberAtm});
+            document.getElementById("descriptionElementText").innerHTML = `O elemento ${element} é o ${numberElement}° elemento da tabela periódica e sua massa atômica vale ${elementProps[1]}, o elemento também possui ${numberElement} prótons e ${parseInt(elementProps[1]) - numberElement} nêutrons.`;
+        };
     } else {
 
     };

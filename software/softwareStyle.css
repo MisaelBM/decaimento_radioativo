@@ -334,18 +334,31 @@ input:focus {
     height: 150px;
     border: 2px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
     background-color: rgb(226, 226, 226);
     position: absolute;
     display: none;
     align-items: center;
     justify-content: center;
     text-align: justify;
+    padding: 0px 10px;
+    animation: description-element-anim 0.3s ease-in-out;
+    transition: 0.3s;
+}
+@keyframes description-element-anim {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 .element-description {
-    color: blue;
-    transition: 0.7s;
+    color: rgb(6, 76, 206);
+    text-wrap: nowrap;
+    transition: 0.3s;
 }
 .element-description:hover {
-    color: green;
-    transition: 0.7s;
+    color: rgb(4, 40, 65);
+    transition: 0.3s;
 }
