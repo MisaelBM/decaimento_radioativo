@@ -7,160 +7,237 @@ const questMode = JSON.parse(localStorage.getItem("questModeRes"));
 
 const ArrayOfElements = [{
     isotopes: [206],
-    nameElem: "Hg",
-    numberAtm: 80
-}, {
+    nameElem: 'Hg',
+    numberAtm: 80,
+    nameExtensive: 'Mercúrio'
+},
+{
     isotopes: [206, 207, 208, 209, 210],
-    nameElem: "Ti",
-    numberAtm: 81
-}, {
+    nameElem: 'Ti',
+    numberAtm: 81,
+    nameExtensive: 'Tálio'
+},
+{
     isotopes: [209, 210, 211, 212, 214],
-    nameElem: "Pb",
-    numberAtm: 82
-}, {
+    nameElem: 'Pb',
+    numberAtm: 82,
+    nameExtensive: 'Chumbo'
+},
+{
     isotopes: [210, 211, 212, 213, 214, 215],
-    nameElem: "Bi",
-    numberAtm: 83
-}, {
+    nameElem: 'Bi',
+    numberAtm: 83,
+    nameExtensive: 'Bismuto'
+},
+{
     isotopes: [210, 211, 212, 213, 214, 215, 216, 218],
-    nameElem: "Po",
-    numberAtm: 84
-}, {
+    nameElem: 'Po',
+    numberAtm: 84,
+    nameExtensive: 'Polônio'
+},
+{
     isotopes: [215, 217, 218, 219],
-    nameElem: "At",
-    numberAtm: 85
-}, { 
+    nameElem: 'At',
+    numberAtm: 85,
+    nameExtensive: 'Astato'
+},
+{
     isotopes: [219, 220, 222],
-    nameElem: "Rn",
-    numberAtm: 86
-}, {
+    nameElem: 'Rn',
+    numberAtm: 86,
+    nameExtensive: 'Radônio'
+},
+{
     isotopes: [221, 223],
-    nameElem: "Fr",
-    numberAtm: 87
-}, {
+    nameElem: 'Fr',
+    numberAtm: 87,
+    nameExtensive: 'Frâncio'
+},
+{
     isotopes: [223, 224, 225, 226, 228],
-    nameElem: "Ra",
-    numberAtm: 88
-}, {
+    nameElem: 'Ra',
+    numberAtm: 88,
+    nameExtensive: 'Radônio'
+},
+{
     isotopes: [225, 227, 228],
-    nameElem: "Ac",
-    numberAtm: 89
-}, {
+    nameElem: 'Ac',
+    numberAtm: 89,
+    nameExtensive: 'Actínio'
+},
+{
     isotopes: [227, 228, 229, 230, 231, 232, 234],
-    nameElem: "Th",
-    numberAtm: 90
-}, {
+    nameElem: 'Th',
+    numberAtm: 90,
+    nameExtensive: 'Tório'
+},
+{
     isotopes: [231, 233, 234],
-    nameElem: "Pa",
-    numberAtm: 91
-}, {
+    nameElem: 'Pa',
+    numberAtm: 91,
+    nameExtensive: 'Protactínio'
+},
+{
     isotopes: [233, 234, 235, 237, 238],
-    nameElem: "U",
-    numberAtm: 92
-}, {
+    nameElem: 'U',
+    numberAtm: 92,
+    nameExtensive: 'Urânio'
+},
+{
     isotopes: [237],
-    nameElem: "Np",
-    numberAtm: 93
-}, {
+    nameElem: 'Np',
+    numberAtm: 93,
+    nameExtensive: 'Netúnio'
+},
+{
     isotopes: [241],
-    nameElem: "Pu",
-    numberAtm: 94
-}, {
+    nameElem: 'Pu',
+    numberAtm: 94,
+    nameExtensive: 'Plutônio'
+},
+{
     isotopes: [241],
-    nameElem: "Am",
-    numberAtm: 95
-}, {
+    nameElem: 'Am',
+    numberAtm: 95,
+    nameExtensive: 'Amerício'
+},
+{
     isotopes: [247],
-    nameElem: "Cm",
-    numberAtm: 96
-}, {
+    nameElem: 'Cm',
+    numberAtm: 96,
+    nameExtensive: 'Curírio'
+},
+{
     isotopes: [247],
-    nameElem: "Bk",
-    numberAtm: 97
-}, {
+    nameElem: 'Bk',
+    numberAtm: 97,
+    nameExtensive: 'Berkélio'
+},
+{
     isotopes: [251],
-    nameElem: "Cf",
-    numberAtm: 98
-}, {
+    nameElem: 'Cf',
+    numberAtm: 98,
+    nameExtensive: 'Califórnio'
+},
+{
     isotopes: [252],
-    nameElem: "Es",
-    numberAtm: 99
-}, {
+    nameElem: 'Es',
+    numberAtm: 99,
+    nameExtensive: 'Einsteinio'
+},
+{
     isotopes: [257],
-    nameElem: "Fm",
-    numberAtm: 100
-}, {
+    nameElem: 'Fm',
+    numberAtm: 100,
+    nameExtensive: 'Férmio'
+},
+{
     isotopes: [258],
-    nameElem: "Md",
-    numberAtm: 101
-}, {
+    nameElem: 'Md',
+    numberAtm: 101,
+    nameExtensive: 'Mendelevio'
+},
+{
     isotopes: [259],
-    nameElem: "No",
-    numberAtm: 102
-}, {
+    nameElem: 'No',
+    numberAtm: 102,
+    nameExtensive: 'Nobelio'
+},
+{
     isotopes: [262],
-    nameElem: "Lr",
-    numberAtm: 103
-}, {
+    nameElem: 'Lr',
+    numberAtm: 103,
+    nameExtensive: 'Laurêncio'
+},
+{
     isotopes: [261],
-    nameElem: "Rf",
-    numberAtm: 104
-}, {
+    nameElem: 'Rf',
+    numberAtm: 104,
+    nameExtensive: 'Rutherfórdio'
+},
+{
     isotopes: [262],
-    nameElem: "Db",
-    numberAtm: 105
-}, {
+    nameElem: 'Db',
+    numberAtm: 105,
+    nameExtensive: 'Dúbnio'
+},
+{
     isotopes: [266],
-    nameElem: "Sg",
-    numberAtm: 106
-}, {
+    nameElem: 'Sg',
+    numberAtm: 106,
+    nameExtensive: 'Seabórgio'
+},
+{
     isotopes: [264],
-    nameElem: "Bh",
-    numberAtm: 107
-}, {
+    nameElem: 'Bh',
+    numberAtm: 107,
+    nameExtensive: 'Bóhrio'
+},
+{
     isotopes: [277],
-    nameElem: "Hs",
-    numberAtm: 108
-}, {
+    nameElem: 'Hs',
+    numberAtm: 108,
+    nameExtensive: 'Hássio'
+},
+{
     isotopes: [268],
-    nameElem: "Mt",
-    numberAtm: 109
-}, {
+    nameElem: 'Mt',
+    numberAtm: 109,
+    nameExtensive: 'Meitnério'
+},
+{
     isotopes: [271],
-    nameElem: "Ds",
-    numberAtm: 110
-}, {
+    nameElem: 'Ds',
+    numberAtm: 110,
+    nameExtensive: 'Darmstádio'
+},
+{
     isotopes: [272],
-    nameElem: "Rg",
-    numberAtm: 111
-}, {
+    nameElem: 'Rg',
+    numberAtm: 111,
+    nameExtensive: 'Roentgênio'
+},
+{
     isotopes: [277],
-    nameElem: "Cn",
-    numberAtm: 112
-}, {
+    nameElem: 'Cn',
+    numberAtm: 112,
+    nameExtensive: 'Copernício'
+},
+{
     isotopes: [286],
-    nameElem: "Nh",
-    numberAtm: 113
-}, {
+    nameElem: 'Nh',
+    numberAtm: 113,
+    nameExtensive: 'Nihônio'
+},
+{
     isotopes: [289],
-    nameElem: "Fl",
-    numberAtm: 114
-}, {
+    nameElem: 'Fl',
+    numberAtm: 114,
+    nameExtensive: 'Fleróvio'
+},
+{
     isotopes: [288],
-    nameElem: "Mc",
-    numberAtm: 115
-}, {
+    nameElem: 'Mc',
+    numberAtm: 115,
+    nameExtensive: 'Moscóvio'
+},
+{
     isotopes: [293],
-    nameElem: "Lv",
-    numberAtm: 116
-}, {
+    nameElem: 'Lv',
+    numberAtm: 116,
+    nameExtensive: 'Livermório'
+},
+{
     isotopes: [294],
-    nameElem: "Ts",
-    numberAtm: 117
-}, {
+    nameElem: 'Ts',
+    numberAtm: 117,
+    nameExtensive: 'Tenessino'
+},
+{
     isotopes: [294],
-    nameElem: "Og",
-    numberAtm: 118
+    nameElem: 'Og',
+    numberAtm: 118,
+    nameExtensive: 'Oganessônio'
 }];
 
 const ArrSeries = [{
@@ -372,11 +449,25 @@ ArrayOfElements.forEach(e => {
         document.getElementById(`${e.nameElem}Group`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
     });
 });
+//Sistema de pesquisa dos elementos
 document.getElementById("searchButton").addEventListener('click', () => {
+    document.getElementById("resultsSearch").innerHTML = "";
+    document.getElementById("resultsSearch").style.display = "flex";
     ArrayOfElements.forEach(e => {
         let nameElement = e.nameElem.toLowerCase();
-        document.getElementById("resultsSearch").innerHTML += nameElement.includes(document.querySelector("#searchElement").value) || e.numberAtm == parseInt(document.querySelector("#searchElement").value) || e.isotopes.indexOf(document.querySelector("#searchElement").value) >= 0 ? `<div class="elements-results">${e.nameElem}</div><hr>` : ``;
+        let resElement = document.querySelector("#searchElement").value;
+        resElement = resElement.toLowerCase();
+        e.isotopes.forEach(n => {
+            n = n.toString();
+            document.getElementById("resultsSearch").innerHTML += nameElement.includes(resElement) || e.numberAtm == parseInt(document.querySelector("#searchElement").value) || n.includes(document.querySelector("#searchElement").value) || `${nameElement} ${n}`.includes(resElement) ? `<div class="elements-results" value="${e.numberAtm}">${e.nameElem} ${n}<hr></div>` : ``;
+        });
     });
+    document.querySelectorAll(".elements-results").forEach(e => e.addEventListener('click', () => {
+        let textElement = e.textContent.split(" ");
+        document.getElementById("selectIsotope").value = `${textElement[1]}, ${textElement[0]}, ${e.getAttribute("value")}`;
+        document.querySelector("#searchElement").value = `${textElement[0]} ${textElement[1]}`;
+        document.getElementById("resultsSearch").style.display = "none";
+    }));
 });
 //Recebe os valores do elemento dados pelo user
 let seriesNumber;
@@ -705,8 +796,14 @@ function FinishDecayDescription() {
         function CreatElementDescription(element) {
             let elementProps = element.split("-");
             let numberElement;
-            arrElementsVisor.forEach(e => {if (e.nameElem == elementProps[0]) numberElement = e.numberAtm});
-            document.getElementById("descriptionElementText").innerHTML = `O elemento ${element} é o ${numberElement}° elemento da tabela periódica e sua massa atômica vale ${elementProps[1]}, o elemento também possui ${numberElement} prótons e ${parseInt(elementProps[1]) - numberElement} nêutrons.`;
+            let elementExtensive;
+            arrElementsVisor.forEach(e => {
+                if (e.nameElem == elementProps[0]) {
+                    numberElement = e.numberAtm;
+                    elementExtensive = ArrayOfElements[numberElement - 80].nameExtensive;
+                };
+            });
+            document.getElementById("descriptionElementText").innerHTML = `O ${elementExtensive} (${element}) é o ${numberElement}° elemento da tabela periódica e sua massa atômica vale ${elementProps[1]}, o elemento também possui ${numberElement} prótons e ${parseInt(elementProps[1]) - numberElement} nêutrons.`;
         };
     } else {
 

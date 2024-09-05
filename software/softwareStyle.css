@@ -97,12 +97,15 @@ input:focus {
     height: fit-content;
     max-height: 250px;
     overflow: auto;
+    font-size: 18px;
     background-color: rgb(224, 224, 224);
     border: 2px solid black;
-    border-radius: 10px;
     padding: 10px;
-    display: flex;
-    margin: 5px;
+    display: none;
+    flex-direction: column;
+}
+.elements-results {
+    text-align: center;
 }
 .system-content {
     width: 100vw;
