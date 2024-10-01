@@ -497,7 +497,8 @@ document.getElementById("searchButton").addEventListener('click', () => {
         resElement = resElement.toLowerCase();
         e.isotopes.forEach(n => {
             n = n.toString();
-            document.getElementById("resultsSearch").innerHTML += nameElement.includes(resElement) || e.numberAtm == parseInt(document.querySelector("#searchElement").value) || n.includes(document.querySelector("#searchElement").value) || `${nameElement} ${n}`.includes(resElement) ? `<div class="elements-results" value="${e.numberAtm}">${e.nameElem} ${n}<hr></div>` : ``;
+            let extensiveElement = e.nameExtensive.toLowerCase();
+            document.getElementById("resultsSearch").innerHTML += nameElement.includes(resElement) || e.numberAtm == parseInt(document.querySelector("#searchElement").value) || n.includes(document.querySelector("#searchElement").value) || `${nameElement} ${n}`.includes(resElement) || extensiveElement.includes(resElement) ? `<div class="elements-results" value="${e.numberAtm}">${e.nameElem} ${n}<hr></div>` : ``;
         });
     });
     document.querySelectorAll(".elements-results").forEach(e => e.addEventListener('click', () => {
