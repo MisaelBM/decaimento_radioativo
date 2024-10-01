@@ -3,241 +3,279 @@ let weigthAtm;
 let nameElement;
 let arrElementsVisor = [];
 let arrSignal = [];
-const questMode = JSON.parse(localStorage.getItem("questModeRes"));
 
 const ArrayOfElements = [{
     isotopes: [206],
     nameElem: 'Hg',
     numberAtm: 80,
-    nameExtensive: 'Mercúrio'
+    nameExtensive: 'Mercúrio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [206, 207, 208, 209, 210],
     nameElem: 'Ti',
     numberAtm: 81,
-    nameExtensive: 'Tálio'
+    nameExtensive: 'Tálio',
+    type: 'Outros Metais'
 },
 {
     isotopes: [209, 210, 211, 212, 214],
     nameElem: 'Pb',
     numberAtm: 82,
-    nameExtensive: 'Chumbo'
+    nameExtensive: 'Chumbo',
+    type: 'Outros Metais'
 },
 {
     isotopes: [210, 211, 212, 213, 214, 215],
     nameElem: 'Bi',
     numberAtm: 83,
-    nameExtensive: 'Bismuto'
+    nameExtensive: 'Bismuto',
+    type: 'Outros Metais'
 },
 {
     isotopes: [210, 211, 212, 213, 214, 215, 216, 218],
     nameElem: 'Po',
     numberAtm: 84,
-    nameExtensive: 'Polônio'
+    nameExtensive: 'Polônio',
+    type: 'Semimetais'
 },
 {
     isotopes: [215, 217, 218, 219],
     nameElem: 'At',
     numberAtm: 85,
-    nameExtensive: 'Astato'
+    nameExtensive: 'Astato',
+    type: 'Halogênios'
 },
 {
     isotopes: [219, 220, 222],
     nameElem: 'Rn',
     numberAtm: 86,
-    nameExtensive: 'Radônio'
+    nameExtensive: 'Radônio',
+    type: 'Gás nobre'
 },
 {
     isotopes: [221, 223],
     nameElem: 'Fr',
     numberAtm: 87,
-    nameExtensive: 'Frâncio'
+    nameExtensive: 'Frâncio',
+    type: 'Metal alcalino'
 },
 {
     isotopes: [223, 224, 225, 226, 228],
     nameElem: 'Ra',
     numberAtm: 88,
-    nameExtensive: 'Radônio'
+    nameExtensive: 'Radônio',
+    type: 'Metal alcalino-terroso'
 },
 {
     isotopes: [225, 227, 228],
     nameElem: 'Ac',
     numberAtm: 89,
-    nameExtensive: 'Actínio'
+    nameExtensive: 'Actínio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [227, 228, 229, 230, 231, 232, 234],
     nameElem: 'Th',
     numberAtm: 90,
-    nameExtensive: 'Tório'
+    nameExtensive: 'Tório',
+    type: 'Actinídeo'
 },
 {
     isotopes: [231, 233, 234],
     nameElem: 'Pa',
     numberAtm: 91,
-    nameExtensive: 'Protactínio'
+    nameExtensive: 'Protactínio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [233, 234, 235, 237, 238],
     nameElem: 'U',
     numberAtm: 92,
-    nameExtensive: 'Urânio'
+    nameExtensive: 'Urânio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [237],
     nameElem: 'Np',
     numberAtm: 93,
-    nameExtensive: 'Netúnio'
+    nameExtensive: 'Netúnio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [241],
     nameElem: 'Pu',
     numberAtm: 94,
-    nameExtensive: 'Plutônio'
+    nameExtensive: 'Plutônio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [241],
     nameElem: 'Am',
     numberAtm: 95,
-    nameExtensive: 'Amerício'
+    nameExtensive: 'Amerício',
+    type: 'Actinídeo'
 },
 {
     isotopes: [247],
     nameElem: 'Cm',
     numberAtm: 96,
-    nameExtensive: 'Curírio'
+    nameExtensive: 'Curírio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [247],
     nameElem: 'Bk',
     numberAtm: 97,
-    nameExtensive: 'Berkélio'
+    nameExtensive: 'Berkélio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [251],
     nameElem: 'Cf',
     numberAtm: 98,
-    nameExtensive: 'Califórnio'
+    nameExtensive: 'Califórnio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [252],
     nameElem: 'Es',
     numberAtm: 99,
-    nameExtensive: 'Einsteinio'
+    nameExtensive: 'Einsteinio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [257],
     nameElem: 'Fm',
     numberAtm: 100,
-    nameExtensive: 'Férmio'
+    nameExtensive: 'Férmio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [258],
     nameElem: 'Md',
     numberAtm: 101,
-    nameExtensive: 'Mendelevio'
+    nameExtensive: 'Mendelevio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [259],
     nameElem: 'No',
     numberAtm: 102,
-    nameExtensive: 'Nobelio'
+    nameExtensive: 'Nobelio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [262],
     nameElem: 'Lr',
     numberAtm: 103,
-    nameExtensive: 'Laurêncio'
+    nameExtensive: 'Laurêncio',
+    type: 'Actinídeo'
 },
 {
     isotopes: [261],
     nameElem: 'Rf',
     numberAtm: 104,
-    nameExtensive: 'Rutherfórdio'
+    nameExtensive: 'Rutherfórdio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [262],
     nameElem: 'Db',
     numberAtm: 105,
-    nameExtensive: 'Dúbnio'
+    nameExtensive: 'Dúbnio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [266],
     nameElem: 'Sg',
     numberAtm: 106,
-    nameExtensive: 'Seabórgio'
+    nameExtensive: 'Seabórgio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [264],
     nameElem: 'Bh',
     numberAtm: 107,
-    nameExtensive: 'Bóhrio'
+    nameExtensive: 'Bóhrio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [277],
     nameElem: 'Hs',
     numberAtm: 108,
-    nameExtensive: 'Hássio'
+    nameExtensive: 'Hássio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [268],
     nameElem: 'Mt',
     numberAtm: 109,
-    nameExtensive: 'Meitnério'
+    nameExtensive: 'Meitnério',
+    type: 'Metal de transição'
 },
 {
     isotopes: [271],
     nameElem: 'Ds',
     numberAtm: 110,
-    nameExtensive: 'Darmstádio'
+    nameExtensive: 'Darmstádio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [272],
     nameElem: 'Rg',
     numberAtm: 111,
-    nameExtensive: 'Roentgênio'
+    nameExtensive: 'Roentgênio',
+    type: 'Metal de transição'
 },
 {
     isotopes: [277],
     nameElem: 'Cn',
     numberAtm: 112,
-    nameExtensive: 'Copernício'
+    nameExtensive: 'Copernício',
+    type: 'Metal de transição'
 },
 {
     isotopes: [286],
     nameElem: 'Nh',
     numberAtm: 113,
-    nameExtensive: 'Nihônio'
+    nameExtensive: 'Nihônio',
+    type: 'Outros Metais'
 },
 {
     isotopes: [289],
     nameElem: 'Fl',
     numberAtm: 114,
-    nameExtensive: 'Fleróvio'
+    nameExtensive: 'Fleróvio',
+    type: 'Outros Metais'
 },
 {
     isotopes: [288],
     nameElem: 'Mc',
     numberAtm: 115,
-    nameExtensive: 'Moscóvio'
+    nameExtensive: 'Moscóvio',
+    type: 'Outros Metais'
 },
 {
     isotopes: [293],
     nameElem: 'Lv',
     numberAtm: 116,
-    nameExtensive: 'Livermório'
+    nameExtensive: 'Livermório',
+    type: 'Outros Metais'
 },
 {
     isotopes: [294],
     nameElem: 'Ts',
     numberAtm: 117,
-    nameExtensive: 'Tenessino'
+    nameExtensive: 'Tenessino',
+    type: 'Halogênio'
 },
 {
     isotopes: [294],
     nameElem: 'Og',
     numberAtm: 118,
-    nameExtensive: 'Oganessônio'
+    nameExtensive: 'Oganessônio',
+    type: 'Gás nobre'
 }];
 
 const ArrSeries = [{
@@ -506,7 +544,7 @@ function AlphaFunc() {
     //Verifica se a emissao e possivel
     let possibleDecay;
     ArrSeries[seriesNumber].isotopes.forEach(e => {
-        if (e.nameElem == ArrSeries[seriesNumber].lastIsotope.split("-")[0]) possibleDecay = (numberAtm - 2) - ((((weigthAtm - 4) - parseInt(ArrSeries[seriesNumber].lastIsotope.split("-")[1])) / 4) * 2) <= e.numberAtm ? true : false;
+        if (e.nameElem == ArrSeries[seriesNumber].lastIsotope.split("-")[0]) possibleDecay = weigthAtm - 4 >= parseInt(ArrSeries[seriesNumber].lastIsotope.split("-")[1]) ? true : false;
     });
     let lastElement = ArrSeries[seriesNumber].lastIsotope.split("-");
     if (indexElem > 1 && !(nameElement == lastElement[0] && weigthAtm == parseInt(lastElement[1])) && possibleDecay) {
@@ -585,8 +623,8 @@ function AddElementsVisor() {
     document.getElementById("visor").innerHTML = "";
     for (let i = 0; i < arrElementsVisor.length; i++) {
         document.getElementById("visor").innerHTML += `
-        <div class="element-visor">
-            ${`${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}` == ArrSeries[seriesNumber].lastIsotope || questMode ? `` : `<button class="info-isotope-button" style="background-color: ${VerificationSeriesColor(arrElementsVisor[i].weigth, arrElementsVisor[i].numberAtm)};"><i class="fa-sharp fa-solid fa-circle-question"></i></button>`}
+        <div class="element-visor" ${JSON.parse(localStorage.getItem("elementsColor")) ? `style="background-color:${ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Metal de transição" ? `rgb(242,176,177)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Outros Metais" ? `rgb(163,199,212)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Semimetais" ? `rgb(109,197,188)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Halogênios" ? `rgb(168,224,244)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Gás nobre" ? `rgb(102,177,222)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Metal alcalino" ? `rgb(246,201,96)` : ArrayOfElements[arrElementsVisor[i].numberAtm - 80].type == "Metal alcalino-terroso" ? `rgb(239,229,91)` : `rgb(228,189,218)`};"` : ``}>
+            ${`${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}` == ArrSeries[seriesNumber].lastIsotope ? `` : `<button class="info-isotope-button" style="background-color: ${VerificationSeriesColor(arrElementsVisor[i].weigth, arrElementsVisor[i].numberAtm)};"><i class="fa-sharp fa-solid fa-circle-question"></i></button>`}
             <div class="weigth-visor">
                 ${arrElementsVisor[i].weigth}
             </div>
@@ -747,65 +785,61 @@ function DescriptionElement(index) {
 };
 //Funcao que faz a descricao final do decaimento
 function FinishDecayDescription() {
-    if (!questMode) {
-        document.getElementById("finishDescription").style.display = "flex";
-        document.getElementById("buttonExitFinishDescription").addEventListener('click', () => document.getElementById("finishDescription").style.display = "none");
-        let textFinishDesciption = ``;
-        textFinishDesciption += `Essa é a série radioativa do <b>${ArrSeries[weigthAtm % 4].nameSeries}</b> e ela acontece de forma ${weigthAtm % 4 == 3 ? `<b>artificial</b>` : `<b>natural</b>`}`;
-        let arrRes = arrElementsVisor.map(e => {
-            let haveElement = false;
-            ArrSeries[seriesNumber].isotopes.forEach(el => {
-                if (el.isotopes.includes(e.weigth) && el.numberAtm == e.numberAtm) haveElement = true;
-            });
-            return haveElement;
+    document.getElementById("finishDescription").style.display = "flex";
+    document.getElementById("buttonExitFinishDescription").addEventListener('click', () => document.getElementById("finishDescription").style.display = "none");
+    let textFinishDesciption = ``;
+    textFinishDesciption += `Essa é a série radioativa do <b>${ArrSeries[weigthAtm % 4].nameSeries}</b> e ela acontece de forma ${weigthAtm % 4 == 3 ? `<b>artificial</b>` : `<b>natural</b>`}`;
+    let arrRes = arrElementsVisor.map(e => {
+        let haveElement = false;
+        ArrSeries[seriesNumber].isotopes.forEach(el => {
+            if (el.isotopes.includes(e.weigth) && el.numberAtm == e.numberAtm) haveElement = true;
         });
-        let listElementsFalse = [];
-        for (let i in arrRes) if (!arrRes[i]) listElementsFalse.push(`<strong class="element-description">${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}</strong>`);
-        let textElementsFalse = "";
-        if (listElementsFalse.length > 1) {
-            for (let i in listElementsFalse) textElementsFalse += i == listElementsFalse.length - 1 ? `e ${listElementsFalse[i]}` : i == listElementsFalse.length - 2 ? `${listElementsFalse[i]} ` : `${listElementsFalse[i]}, `;
-        } else {
-            textElementsFalse = listElementsFalse.toString();
-        };
-        textFinishDesciption += arrRes.includes(false) && weigthAtm % 4 != 3 ? `, mas do jeito como foi realizada é somente possível fazer o decaimento de forma <b>artificial</b>, pois o${listElementsFalse.length > 1 ? `s elementos ${textElementsFalse} não estão presentes na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. ` : ` elemento ${textElementsFalse} não está presente na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. `}` : `. `;
-        if (arrRes.includes(false)) for (let i in arrRes) textFinishDesciption += !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `Acontece um pequeno desvio no decaimento onde é utilizado o elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> que não se encontra na série radioativa original, mas já é rapidamente corrigido com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento <strong class="element-description">${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}</strong>. ` : !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && !arrRes[parseInt(i) + 1] ? `Existe um desvio no decaimento que começa no elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> ` : !arrRes[parseInt(i)] && (!arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `e termina no elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> que corrige o desvio com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento <strong class="element-description">${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}</strong>. ` : ``;
-        textFinishDesciption += `O decaimento realizado é composto por ${arrElementsVisor.length} elementos, que começa no elemento <strong class="element-description">${arrElementsVisor[0].nameElem}-${arrElementsVisor[0].weigth}</strong> e termina com o elemento <strong class="element-description">${arrElementsVisor[arrElementsVisor.length - 1].nameElem}-${arrElementsVisor[arrElementsVisor.length - 1].weigth}</strong>, assim finalizando o decaimento. `;
-        let emissionAlpha = 0;
-        let emissionBeta = 0;
-        arrSignal.forEach(e => {
-            if (e == "α") {
-                emissionAlpha++
-            } else {
-                emissionBeta++
-            }; 
-        });
-        textFinishDesciption += !(arrRes.includes(false)) ? `Nesse decaimento ${arrSignal.length > 1 ? `foram realizadas ${arrSignal.length} emissões que são ${emissionAlpha} <b>Alfa (α)</b> e ${emissionBeta} <b>Beta (β)</b>. ` : `foi realizado ${arrSignal.length} emissão que é ${arrSignal[0] == "α" ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`}`}` : ``;
-        document.getElementById("finishDescriptionVisor").innerHTML = textFinishDesciption;
-        //Coloca o escutador de eventos nos elementos citados
-        document.querySelectorAll(".element-description").forEach(e => {
-            e.addEventListener('mouseenter', () => {  
-                document.getElementById("descriptionElement").style.display = "flex";
-                document.getElementById("descriptionElement").style.left = e.getBoundingClientRect().left + 300 < innerWidth ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 130}px`;
-                document.getElementById("descriptionElement").style.top = `${e.getBoundingClientRect().top < innerHeight - 180 ? e.getBoundingClientRect().top + 25 : e.getBoundingClientRect().top - 175}px`;
-                CreatElementDescription(e.textContent);
-            });
-            e.addEventListener('mouseleave', () => {
-                document.getElementById("descriptionElement").style.display = "none";
-            });
-        });
-        function CreatElementDescription(element) {
-            let elementProps = element.split("-");
-            let numberElement;
-            let elementExtensive;
-            arrElementsVisor.forEach(e => {
-                if (e.nameElem == elementProps[0]) {
-                    numberElement = e.numberAtm;
-                    elementExtensive = ArrayOfElements[numberElement - 80].nameExtensive;
-                };
-            });
-            document.getElementById("descriptionElementText").innerHTML = `O ${elementExtensive} (${element}) é o ${numberElement}° elemento da tabela periódica e sua massa atômica vale ${elementProps[1]}, o elemento também possui ${numberElement} prótons e ${parseInt(elementProps[1]) - numberElement} nêutrons.`;
-        };
+        return haveElement;
+    });
+    let listElementsFalse = [];
+    for (let i in arrRes) if (!arrRes[i]) listElementsFalse.push(`<strong class="element-description">${arrElementsVisor[i].nameElem}-${arrElementsVisor[i].weigth}</strong>`);
+    let textElementsFalse = "";
+    if (listElementsFalse.length > 1) {
+        for (let i in listElementsFalse) textElementsFalse += i == listElementsFalse.length - 1 ? `e ${listElementsFalse[i]}` : i == listElementsFalse.length - 2 ? `${listElementsFalse[i]} ` : `${listElementsFalse[i]}, `;
     } else {
-
+        textElementsFalse = listElementsFalse.toString();
+    };
+    textFinishDesciption += arrRes.includes(false) && weigthAtm % 4 != 3 ? `, mas do jeito como foi realizada é somente possível fazer o decaimento de forma <b>artificial</b>, pois o${listElementsFalse.length > 1 ? `s elementos ${textElementsFalse} não estão presentes na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. ` : ` elemento ${textElementsFalse} não está presente na série radioativa do ${ArrSeries[weigthAtm % 4].nameSeries}. `}` : `. `;
+    if (arrRes.includes(false)) for (let i in arrRes) textFinishDesciption += !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `Acontece um pequeno desvio no decaimento onde é utilizado o elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> que não se encontra na série radioativa original, mas já é rapidamente corrigido com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento <strong class="element-description">${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}</strong>. ` : !arrRes[parseInt(i)] && (arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && !arrRes[parseInt(i) + 1] ? `Existe um desvio no decaimento que começa no elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> ` : !arrRes[parseInt(i)] && (!arrRes[parseInt(i) - 1] || parseInt(i) - 1 < 0) && arrRes[parseInt(i) + 1] ? `e termina no elemento <strong class="element-description">${arrElementsVisor[parseInt(i)].nameElem}-${arrElementsVisor[parseInt(i)].weigth}</strong> que corrige o desvio com uma emissão ${arrElementsVisor[parseInt(i)].weigth > arrElementsVisor[parseInt(i) + 1].weigth ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`} virando o elemento <strong class="element-description">${arrElementsVisor[parseInt(i) + 1].nameElem}-${arrElementsVisor[parseInt(i) + 1].weigth}</strong>. ` : ``;
+    textFinishDesciption += `O decaimento realizado é composto por ${arrElementsVisor.length} elementos, que começa no elemento <strong class="element-description">${arrElementsVisor[0].nameElem}-${arrElementsVisor[0].weigth}</strong> e termina com o elemento <strong class="element-description">${arrElementsVisor[arrElementsVisor.length - 1].nameElem}-${arrElementsVisor[arrElementsVisor.length - 1].weigth}</strong>, assim finalizando o decaimento. `;
+    let emissionAlpha = 0;
+    let emissionBeta = 0;
+    arrSignal.forEach(e => {
+        if (e == "α") {
+            emissionAlpha++
+        } else {
+            emissionBeta++
+        }; 
+    });
+    textFinishDesciption += !(arrRes.includes(false)) ? `Nesse decaimento ${arrSignal.length > 1 ? `foram realizadas ${arrSignal.length} emissões que são ${emissionAlpha} <b>Alfa (α)</b> e ${emissionBeta} <b>Beta (β)</b>. ` : `foi realizado ${arrSignal.length} emissão que é ${arrSignal[0] == "α" ? `<b>Alfa (α)</b>` : `<b>Beta (β)</b>`}`}` : ``;
+    document.getElementById("finishDescriptionVisor").innerHTML = textFinishDesciption;
+    //Coloca o escutador de eventos nos elementos citados
+    document.querySelectorAll(".element-description").forEach(e => {
+        e.addEventListener('mouseenter', () => {  
+            document.getElementById("descriptionElement").style.display = "flex";
+            document.getElementById("descriptionElement").style.left = e.getBoundingClientRect().left + 300 < innerWidth ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 130}px`;
+            document.getElementById("descriptionElement").style.top = `${e.getBoundingClientRect().top < innerHeight - 180 ? e.getBoundingClientRect().top + 25 : e.getBoundingClientRect().top - 175}px`;
+            CreatElementDescription(e.textContent);
+        });
+        e.addEventListener('mouseleave', () => {
+            document.getElementById("descriptionElement").style.display = "none";
+        });
+    });
+    function CreatElementDescription(element) {
+        let elementProps = element.split("-");
+        let numberElement;
+        let elementExtensive;
+        arrElementsVisor.forEach(e => {
+            if (e.nameElem == elementProps[0]) {
+                numberElement = e.numberAtm;
+                elementExtensive = ArrayOfElements[numberElement - 80].nameExtensive;
+            };
+        });
+        document.getElementById("descriptionElementText").innerHTML = `O ${elementExtensive} (${element}) é o ${numberElement}° elemento da tabela periódica e sua massa atômica vale ${elementProps[1]}, o elemento também possui ${numberElement} prótons e ${parseInt(elementProps[1]) - numberElement} nêutrons.`;
     };
 };

@@ -24,6 +24,14 @@ main {
 input:focus {
     outline: none;
 }
+.selects-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+}
 .select-isotope-content {
     width: 100%;
     height: fit-content;
@@ -42,6 +50,23 @@ input:focus {
     box-shadow: 3px 3px 10px black;
     border: 2px solid black;
 }
+.button-next-content {
+    width: fit-content;
+    margin: 20px 0px;
+}
+.button-next {
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+    padding: 5px 35px 5px 35px;
+    background-color: white;
+    transition: 0.7s;
+}
+.button-next:hover {
+    background-color: rgb(75, 143, 231);
+    transition: 0.7s;
+}
 .button-start-content {
     width: fit-content;
     margin: 20px 0px;
@@ -59,53 +84,8 @@ input:focus {
     background-color: rgb(75, 143, 231);
     transition: 0.7s;
 }
-.text-or {
-    font-size: 20px;
-}
-.search-element-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-}
-.search-element {
-    width: 100%;
-    height: fit-content;
-    font-size: 20px;
-    text-align: start;
-    border-radius: 20px 0px 0px 20px;
-    padding: 7px;
-    box-shadow: 3px 3px 10px black;
-    border: 2px solid black;
-}
 ::-webkit-input-placeholder {
     color: black;
-}
-.search-button {
-    width: fit-content;
-    height: fit-content;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 0px 20px 20px 0px;
-    padding: 7px 12px;
-    box-shadow: 3px 3px 10px black;
-    border: 2px solid black;
-}
-.results-search {
-    width: 200px;
-    height: fit-content;
-    max-height: 250px;
-    overflow: auto;
-    font-size: 18px;
-    background-color: rgb(224, 224, 224);
-    border: 2px solid black;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-}
-.elements-results {
-    text-align: center;
 }
 .system-content {
     width: 100vw;
@@ -333,7 +313,7 @@ input:focus {
 .finish-description-content {
     display: flex;
     width: 90vw;
-    height: 90vh;
+    height: fit-content;
     background-color: rgb(184, 184, 184);
     margin: auto;
     justify-content: baseline;
@@ -371,7 +351,7 @@ input:focus {
     top: 0;
 }
 .finish-description-text {
-    text-align: justify;
+    text-align: center;
     padding: 10px;
     font-size: 20px;
     max-height: 100%;
