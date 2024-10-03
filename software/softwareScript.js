@@ -3,6 +3,7 @@ let weigthAtm;
 let nameElement;
 let arrElementsVisor = [];
 let arrSignal = [];
+const effectsSound = new Audio("../click-21156.mp3");
 
 const ArrayOfElements = [{
     isotopes: [206],
@@ -480,6 +481,8 @@ const ArrSeries = [{
     }]
 }];
 
+//Verificacao de opcoes de audio
+effectsSound.volume = JSON.parse(localStorage.getItem("effectsSoundsRes")) ? 1 : 0;
 //Loop que cria as opcoes do seletor de elementos
 ArrayOfElements.forEach(e => {
     document.getElementById("selectIsotope").innerHTML += `<optgroup id="${e.nameElem}Group"></optgoup>`;
@@ -489,6 +492,7 @@ ArrayOfElements.forEach(e => {
 });
 //Sistema de pesquisa dos elementos
 document.getElementById("searchButton").addEventListener('click', () => {
+    effectsSound.play();
     document.getElementById("resultsSearch").innerHTML = "";
     document.getElementById("resultsSearch").style.display = "flex";
     ArrayOfElements.forEach(e => {
@@ -511,6 +515,7 @@ document.getElementById("searchButton").addEventListener('click', () => {
 //Recebe os valores do elemento dados pelo user
 let seriesNumber;
 document.getElementById("buttonStart").addEventListener('click', () => {
+    effectsSound.play();
     //Recebe os dados do usuario
     let arrData = document.getElementById("selectIsotope").value;
     arrData = arrData.toString();
@@ -536,6 +541,7 @@ document.getElementById("buttonStart").addEventListener('click', () => {
 let indexElem;
 //Funcao alfa
 function AlphaFunc() {
+    effectsSound.play();
     //Verfica se a variavel ja contem o index do ultimo elemento
     if (!indexElem) {
         ArrayOfElements.forEach(e => {
@@ -572,6 +578,7 @@ function AlphaFunc() {
 };
 //Funcao beta
 function BetaFunc() {
+    effectsSound.play();
     //Verfica se a variavel ja contem o index do ultimo elemento
     if (!indexElem) {
         ArrayOfElements.forEach(e => {
@@ -607,6 +614,7 @@ function BetaFunc() {
 };
 //Funcao de deletar o ultimo elemento
 function DeleteFunc() {
+    effectsSound.play();
     if (arrSignal.length != 0) {
         arrElementsVisor.pop();
         arrSignal.pop();
@@ -645,6 +653,7 @@ function AddElementsVisor() {
     //Adiciona o clique do botao de descricao do elemento
     document.querySelectorAll(".info-isotope-button").forEach(e => {
         e.addEventListener('click', () => {
+            effectsSound.play();
             document.getElementById("boxDescription").style.display = "flex";
             document.getElementById("boxDescription").style.left = e.getBoundingClientRect().left + 300 < innerWidth ? `${e.getBoundingClientRect().left}px` : `${e.getBoundingClientRect().left - 100}px`;
             document.getElementById("boxDescription").style.top = `${e.getBoundingClientRect().top}px`;
@@ -680,7 +689,10 @@ function AddElementsVisor() {
     };
 };
 //Fecha a caixa de descricao
-document.getElementById("boxClose").addEventListener('click', () => document.getElementById("boxDescription").style.display = "none");
+document.getElementById("boxClose").addEventListener('click', () => {
+    effectsSound.play();
+    document.getElementById("boxDescription").style.display = "none";
+});
 //Funcao que verifica se esta seguindo a serie radioativa 
 function VerificationSeriesColor(elemWe, elemNu) {
     let haveElement = false;
@@ -786,8 +798,12 @@ function DescriptionElement(index) {
 };
 //Funcao que faz a descricao final do decaimento
 function FinishDecayDescription() {
+    effectsSound.play();
     document.getElementById("finishDescription").style.display = "flex";
-    document.getElementById("buttonExitFinishDescription").addEventListener('click', () => document.getElementById("finishDescription").style.display = "none");
+    document.getElementById("buttonExitFinishDescription").addEventListener('click', () => {
+        effectsSound.play();
+        document.getElementById("finishDescription").style.display = "none";
+    });
     let textFinishDesciption = ``;
     textFinishDesciption += `Essa é a série radioativa do <b>${ArrSeries[weigthAtm % 4].nameSeries}</b> e ela acontece de forma ${weigthAtm % 4 == 3 ? `<b>artificial</b>` : `<b>natural</b>`}`;
     let arrRes = arrElementsVisor.map(e => {

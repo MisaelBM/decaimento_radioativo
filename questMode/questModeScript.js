@@ -474,6 +474,10 @@ const ArrSeries = [{
     }]
 }];
 
+//Verificacao de opcoes de audio
+const effectsSound = new Audio("../click-21156.mp3");
+effectsSound.volume = JSON.parse(localStorage.getItem("effectsSoundsRes")) ? 1 : 0;
+
 document.getElementById("firstSelect").style.display = "flex";
 document.getElementById("secondSelect").style.display = "none";
 //Loop que cria as opcoes do primeiro seletor de elementos
@@ -493,6 +497,7 @@ ArrayOfElements.forEach(e => {
 });
 //Botao de passar para o proximo seletor
 document.getElementById("buttonNext").addEventListener('click', () => {
+    effectsSound.play();
     document.getElementById("firstSelect").style.display = "none";
     document.getElementById("secondSelect").style.display = "flex";
     let firstIsotope = document.getElementById("selectFirstIsotope").value;
@@ -509,7 +514,7 @@ document.getElementById("buttonNext").addEventListener('click', () => {
         });
         e.isotopes.forEach(elem => {
             ArrSeries[indexSeries].isotopes.forEach(ind => {
-                if (`${firstIsotope[1]}-${firstIsotope[0]}` != `${e.nameElem}-${elem}` && (ind.isotopes.includes(elem) && ind.numberAtm == e.numberAtm) && ((parseInt(firstIsotope[0]) > elem && (e.numberAtm <= parseInt(firstIsotope[2]))) || (parseInt(firstIsotope[0]) == elem && (e.numberAtm > parseInt(firstIsotope[2]))))) document.getElementById(`${e.nameElem}GroupSecond`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
+                if (`${firstIsotope[1]}-${firstIsotope[0]}` != `${e.nameElem}-${elem}` && (ind.isotopes.includes(elem) && ind.numberAtm == e.numberAtm) && (parseInt(firstIsotope[2]) - ((parseInt(firstIsotope[0]) - elem) / 2) <= e.numberAtm) && (parseInt(firstIsotope[2]) - ((parseInt(firstIsotope[0]) - elem) / 2) >= 80) && (elem <= parseInt(firstIsotope[0]))) document.getElementById(`${e.nameElem}GroupSecond`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
             });
         });
     });
@@ -522,6 +527,7 @@ let firstElement;
 let lastElement;
 //Botao que inicia o sistema
 document.getElementById("buttonStart").addEventListener('click', () => {
+    effectsSound.play();
     firstElement = document.getElementById("selectFirstIsotope").value;
     lastElement = document.getElementById("selectSecondIsotope").value;
     document.getElementById("inputContent").style.display = "none";
@@ -591,6 +597,7 @@ function AddElementsVisor() {
 let indexElem;
 //Funcao alfa
 function AlphaFunc() {
+    effectsSound.play();
     let weigthAtm = arrElementsVisor[arrElementsVisor.length - 1].weigth;
     let numberAtm = arrElementsVisor[arrElementsVisor.length - 1].numberAtm;
     let nameElement = arrElementsVisor[arrElementsVisor.length - 1].nameElem;
@@ -631,6 +638,7 @@ function AlphaFunc() {
 };
 //Funcao beta
 function BetaFunc() {
+    effectsSound.play();
     let weigthAtm = arrElementsVisor[arrElementsVisor.length - 1].weigth;
     let numberAtm = arrElementsVisor[arrElementsVisor.length - 1].numberAtm;
     let nameElement = arrElementsVisor[arrElementsVisor.length - 1].nameElem;
@@ -670,6 +678,7 @@ function BetaFunc() {
 };
 //Funcao de deletar o ultimo elemento
 function DeleteFunc() {
+    effectsSound.play();
     if (arrSignal.length != 0) {
         arrElementsVisor.pop();
         arrSignal.pop();
@@ -685,8 +694,12 @@ function DeleteFunc() {
 };
 document.getElementById("finishDescription").style.display = "none";
 function FinishDecayDescription() {
+    effectsSound.play();
     document.getElementById("finishDescription").style.display = "flex";
-    document.getElementById("buttonExitFinishDescription").addEventListener('click', () => document.getElementById("finishDescription").style.display = "none");
+    document.getElementById("buttonExitFinishDescription").addEventListener('click', () => {
+        effectsSound.play();
+        document.getElementById("finishDescription").style.display = "none";
+    });
     let numberElementsIncorrects = 0;
     arrElementsVisor.forEach(e => {
         let haveElement = false;
@@ -701,9 +714,9 @@ function FinishDecayDescription() {
         ArrSeries[seriesNumber].isotopes.forEach(el => {
             return el.isotopes.includes(e.weigth) && el.numberAtm == e.numberAtm ? haveElement = true : false;
         });
-        if (!haveElement) elementsIncorrects += `${e.nameElem}-${e.weigth}, `;
+        if (!haveElement) elementsIncorrects += `${e.nameElem}-${e.weigth},`;
     });
-    numberElementsIncorrects ? elementsIncorrects = elementsIncorrects.slice(0, elementsIncorrects.length - 2) : false;
+    numberElementsIncorrects ? elementsIncorrects = elementsIncorrects.slice(0, elementsIncorrects.length - 1) : false;
     let textQuestMode = ``;
     textQuestMode += `<h2>Você acertou <strong style="color:${parseInt(((arrElementsVisor.length - numberElementsIncorrects) / arrElementsVisor.length) * 100) >= 80 ? "green" : parseInt(((arrElementsVisor.length - numberElementsIncorrects) / arrElementsVisor.length) * 100) >= 50 ? "yellow" : "brown"}">${parseInt(((arrElementsVisor.length - numberElementsIncorrects) / arrElementsVisor.length) * 100)}%</strong> do decaimento.</h2>`;
     textQuestMode += `<p>Esse decaimento se inicia no ${ArrayOfElements[parseInt(firstElement.split(",")[2]) - 80].nameExtensive} (${firstElement.split(",")[1].trim()}-${firstElement.split(",")[0]}) e termina com o ${ArrayOfElements[parseInt(lastElement.split(",")[2]) - 80].nameExtensive} (${lastElement.split(",")[1].trim()}-${lastElement.split(",")[0]}). Nesse decaimento você utilizou ${arrElementsVisor.length} elementos`;
