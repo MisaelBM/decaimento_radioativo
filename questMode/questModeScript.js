@@ -514,7 +514,7 @@ document.getElementById("buttonNext").addEventListener('click', () => {
         });
         e.isotopes.forEach(elem => {
             ArrSeries[indexSeries].isotopes.forEach(ind => {
-                if (`${firstIsotope[1]}-${firstIsotope[0]}` != `${e.nameElem}-${elem}` && (ind.isotopes.includes(elem) && ind.numberAtm == e.numberAtm) && (parseInt(firstIsotope[2]) - ((parseInt(firstIsotope[0]) - elem) / 2) <= e.numberAtm) && (parseInt(firstIsotope[2]) - ((parseInt(firstIsotope[0]) - elem) / 2) >= 80) && (elem <= parseInt(firstIsotope[0]))) document.getElementById(`${e.nameElem}GroupSecond`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
+                if (`${firstIsotope[1]}-${firstIsotope[0]}` != `${e.nameElem}-${elem}` && (ind.isotopes.includes(elem) && ind.numberAtm == e.numberAtm) && (parseInt(firstIsotope[2]) - ((parseInt(firstIsotope[0]) - elem) / 2) <= e.numberAtm) && (elem <= parseInt(firstIsotope[0]))) document.getElementById(`${e.nameElem}GroupSecond`).innerHTML += `<option value="${elem}, ${e.nameElem}, ${e.numberAtm}">${e.nameElem} ${elem}</option>`;
             });
         });
     });
