@@ -52,6 +52,9 @@ main {
 .fa-question {
     margin-right: 5px;
 }
+.fa-automatic {
+    margin-right: 5px;
+}
 .button-action:hover {
     background-color: rgb(152, 205, 255);
     transform: scale(1.1);

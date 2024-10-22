@@ -260,22 +260,6 @@ input:focus {
     padding: 5px;
     margin: 10px;
 }
-.info-isotope-button {
-    border: 0;
-    padding: 0;
-    border-radius: 100%;
-    box-shadow: 1px 1px 7px;
-    background-color: rgb(229, 255, 0);
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -5px;
-    left: -10px;
-    font-size: 25px;
-}
 .weigth-visor {
     width: fit-content;
     height: fit-content;

@@ -1,0 +1,185 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: gray;
+    overflow: hidden;
+}
+.main-principal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-select-elements {
+    width: fit-content;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.element-content {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.element-text {
+    font-size: 25px;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+.inputs-elements-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+.input-elements {
+    width: 200px;
+    height: fit-content;
+    font-size: 20px;
+    padding: 3px 5px;
+    border: 0px solid;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px black;
+}
+::-webkit-input-placeholder {
+    color: black;
+}
+hr {
+    width: 100%;
+    border: 1px solid black;
+}
+.error-message {
+    font-size: 20px;
+    color: white;
+    background-color: brown;
+    border-radius: 10px;
+    padding: 3px 10px;
+    visibility: hidden;
+}
+.button-confirm-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 10px;
+    border: 0px solid;
+    box-shadow: 3px 3px 8px black;
+    border-radius: 15px;
+    background-color: rgb(47, 157, 247);
+    font-size: 23px;
+}
+.elements-visor-content {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+}
+.elements-visor {
+    width: 90vw;
+    height: fit-content;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 25px 10px;
+    background-color: rgb(202, 201, 201);
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 3px 3px 10px black;
+}
+.element-visor {
+    width: 53px;
+    height: 53px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 10px;
+}
+.weigth-visor {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 14px;
+    padding: 1.5px;
+}
+.name-visor {
+    font-size: 22px;
+    font-family: sans-serif;
+}
+.number-visor {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 14px;
+    padding: 1.5px;
+}
+.signal-elements {
+    font-size: 40px;
+    height: 50px;
+    margin: 10px 20px 10px 20px;
+}
+.exit-button-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 2;
+}
+.exit-button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border: transparent;
+    font-size: 35px;
+    color: white;
+    border-radius: 100%;
+    padding: 0;
+    transition: 0.4s;
+}
+.exit-button:hover {
+    color: rgb(0, 162, 255);
+    transition: 0.4s;
+}
