@@ -229,6 +229,7 @@ document.getElementById("buttonConfirm").addEventListener('click', () => {
     if (firstElementWeight && firstElementNumber && lastElementWeight && lastElementNumber) {
         if (((firstElementNumber - ((firstElementWeight - lastElementWeight) / 2)) <= lastElementNumber) && (firstElementWeight >= lastElementWeight) && (firstElementWeight > 0 && firstElementNumber > 0 && lastElementWeight > 0 && lastElementNumber > 0 && firstElementNumber < 119 && lastElementNumber < 119)) {
             DecaySystem(firstElementWeight, firstElementNumber, lastElementWeight, lastElementNumber);
+document.getElementById("errorMessage").style.visibility = "hidden";
         } else {
             document.getElementById("errorMessage").style.visibility = "visible";
             document.getElementById("errorMessage").innerHTML = "Não é possível realizar o decaimento com esses elementos";
